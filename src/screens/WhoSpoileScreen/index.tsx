@@ -28,6 +28,7 @@ const WhoSpoileScreen = () => {
     </>
   );
 };
+//dddddd
 
 const styles = StyleSheet.create({
   container: {
