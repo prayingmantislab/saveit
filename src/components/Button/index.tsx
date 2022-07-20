@@ -1,5 +1,5 @@
-import React from 'react'
-import { Pressable, StyleSheet, Text } from 'react-native'
+import React from 'react';
+import {Pressable, StyleSheet, Text} from 'react-native';
 
 interface ButtonProps {
   text: string;
@@ -7,7 +7,7 @@ interface ButtonProps {
   containerStyles?: object;
 }
 
-const Button = ({ text, onPress, containerStyles }: ButtonProps) => {
+const Button = ({text, onPress, containerStyles}: ButtonProps) => {
   return (
     <Pressable onPress={onPress} style={[styles.root, containerStyles]}>
       <Text style={styles.text}>{text}</Text>
@@ -25,10 +25,11 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     borderWidth: 1,
     borderColor: '#a15e1b',
+    marginHorizontal: 10,
   },
   text: {
     fontSize: 16,
   },
-})
+});
 
 export default Button;
