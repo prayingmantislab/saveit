@@ -5,6 +5,7 @@ interface ButtonProps {
   text: string;
   onPress: () => void;
   containerStyles?: object;
+  children?: any;
 }
 
 const Button = ({text, onPress, containerStyles}: ButtonProps) => {
