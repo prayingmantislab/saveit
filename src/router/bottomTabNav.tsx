@@ -6,7 +6,8 @@ import Entypo from 'react-native-vector-icons/Entypo';
 import HomeStack from './HomeStack';
 import ShoppingCartStack from './ShoppingCartStack';
 import WhoSpoileScreen from '../screens/WhoSpoileScreen';
-
+import InterestsScreen from '../screens/InterestsScreen';
+import ReminderScreen from '../screens/ReminderScreen';
 const Tab = createBottomTabNavigator();
 
 const BottomTabNav = () => {
@@ -36,8 +37,17 @@ const BottomTabNav = () => {
         }}
       />
       <Tab.Screen
-        component={WhoSpoileScreen}
-        name="spoiled"
+        component={InterestsScreen}
+        name="InterestsScreen"
+        options={{
+          tabBarIcon: ({color}) => (
+            <Entypo name="setup" color={color} size={25} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        component={ReminderScreen}
+        name="ReminderScreen"
         options={{
           tabBarIcon: ({color}) => (
             <Entypo name="setup" color={color} size={25} />
@@ -53,6 +63,7 @@ const BottomTabNav = () => {
           ),
         }}
       />
+
       <Tab.Screen
         component={MenuScreen}
         name="more"

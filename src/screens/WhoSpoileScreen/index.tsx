@@ -11,6 +11,7 @@ import {
 import DropDownPicker from 'react-native-dropdown-picker';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import Button from '../../components/Button';
+
 const bgImage = {
   uri:
     'https://res.cloudinary.com/dgaobrwxs/image/upload/v1658246237/SaveIt/Screen_Shot_2022-07-19_at_18.55.50_pouvut.png',
@@ -62,8 +63,8 @@ const WhoSpoileScreen = () => {
             }}
           />
           <TextInput style={styles.input}>?את מי מפנקים</TextInput>
-          {/* 
-          <DropDownPicker>
+
+          {/* <DropDownPicker>
             <DropDownPicker.Item label="אחר" value="אחר" />
             <DropDownPicker.Item label="קולגה" value="קולגה" />
             <DropDownPicker.Item label="בן זוג" value="בן זוג" />
@@ -84,7 +85,6 @@ const WhoSpoileScreen = () => {
                 display="inline"
                 testID="dateTimePicker"
                 value={date}
-                // @ts-ignore
                 // @ts-ignore
                 is24Hour={true}
                 onChange={onChange}
