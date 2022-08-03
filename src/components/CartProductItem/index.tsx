@@ -68,17 +68,17 @@ const CartProductItem = ({cartItem}: CartProductItemProps) => {
             from $
             {
               //@ts-ignore
-              product.price
+              product.price.toFixed(2)
             }
             {
               //@ts-ignore
+              //create a line break above the old price
               product.oldPrice && (
                 <Text style={styles.oldPrice}>
                   {' '}
-                  $
                   {
                     //@ts-ignore
-                    product.oldPrice
+                    product.oldPrice.toFixed(2)
                   }
                 </Text>
               )
