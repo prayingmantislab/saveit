@@ -1,3 +1,37 @@
+type Reminder @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  event: String
+  date: AWSDate!
+  Recipients: [Recipient] @manyToMany(relationName: "ReminderRecipient")
+}
+
+type Order @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  CartProducts: [CartProduct] @hasMany(indexName: "byOrder", fields: ["id"])
+}
+
+type Recipient @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String!
+  relation: String!
+  birthDay: AWSDate
+  address: String!
+  interests: [String!]
+  reminders: [Reminder] @manyToMany(relationName: "ReminderRecipient")
+}
+
+type User @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  firstName: String!
+  lastName: String!
+  phoneNumber: AWSPhone!
+  birthDay: AWSDate
+  sex: String
+  city: String
+  email: AWSEmail!
+  password: String
+}
+
 type Product @model @auth(rules: [{allow: public}]) {
   id: ID!
   title: String!
@@ -18,5 +52,6 @@ type CartProduct @model @auth(rules: [{allow: public}]) {
   option: String
   productID: ID!
   product: Product @hasOne(fields: ["productID"])
+  orderID: ID! @index(name: "byOrder")
 }
  

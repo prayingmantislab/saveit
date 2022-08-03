@@ -162,7 +162,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   buttonsContainer: {
-    flex: 4,
+    flex: 8,
     flexDirection: 'column',
     alignItems: 'center',
   },
@@ -217,7 +217,7 @@ const styles = StyleSheet.create({
   navButton: {
     backgroundColor: '#faf8f5',
     borderRadius: 10,
-    width: '35%',
+    width: '25%',
     height: '80%',
     writingDirection: 'rtl',
     alignItems: 'center',
