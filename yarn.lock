@@ -2627,17 +2627,10 @@
     "@babel/runtime" "^7.7.2"
     "regenerator-runtime" "^0.13.3"
 
-<<<<<<< HEAD
 "@react-native-async-storage/async-storage@^1.17.9":
   "integrity" "sha512-HKhMvjpA5/YzNMkcY3qeWLdTtUrtJe243knHNNYe1c0IplX69hZyiw7DjFwAgxPG9+YvzHDHliqPV+mBNOv+cQ=="
   "resolved" "https://registry.npmjs.org/@react-native-async-storage/async-storage/-/async-storage-1.17.9.tgz"
   "version" "1.17.9"
-=======
-"@react-native-async-storage/async-storage@^1.17.7":
-  "integrity" "sha512-mDtWhCcpxzrZhA95f6zi0pnBsjBEZW1LKZWfxVXG0UfaWpPxDBCKowNk2xjRTytckZeVhjmPJPtBU+8QNQcR0A=="
-  "resolved" "https://registry.npmjs.org/@react-native-async-storage/async-storage/-/async-storage-1.17.7.tgz"
-  "version" "1.17.7"
->>>>>>> bd69ad40821ad2539465d67f7ce1ce1996bb27a2
   dependencies:
     "merge-options" "^3.0.4"
 
@@ -2764,8 +2757,6 @@
     "strip-ansi" "^5.2.0"
     "sudo-prompt" "^9.0.0"
     "wcwidth" "^1.0.1"
-<<<<<<< HEAD
-=======
 
 "@react-native-community/datetimepicker@^6.2.0":
   "integrity" "sha512-w1ZS+wYO3qSASliRp+B7mPphOhtVm++rhSbj1WsgXdgLgDXSkDxpMnAXXQu9M0XdcgBwVJ6wDExeIwuzU5Jtfg=="
@@ -2773,7 +2764,6 @@
   "version" "6.2.0"
   dependencies:
     "invariant" "^2.2.4"
->>>>>>> bd69ad40821ad2539465d67f7ce1ce1996bb27a2
 
 "@react-native-community/eslint-config@^2.0.0":
   "integrity" "sha512-vHaMMfvMp9BWCQQ0lNIXibOJTcXIbYUQ8dSUsMOsrXgVkeVQJj88OwrKS00rQyqwMaC4/a6HuDiFzYUkGKOpVg=="
@@ -2921,15 +2911,9 @@
     "lodash" "^4.17.15"
 
 "@sinonjs/text-encoding@^0.7.1":
-<<<<<<< HEAD
   "integrity" "sha512-sXXKG+uL9IrKqViTtao2Ws6dy0znu9sOaP1di/jKGW1M6VssO8vlpXCQcpZ+jisQ1tTFAC5Jo/EOzFbggBagFQ=="
   "resolved" "https://registry.npmjs.org/@sinonjs/text-encoding/-/text-encoding-0.7.2.tgz"
   "version" "0.7.2"
-=======
-  "integrity" "sha512-+iTbntw2IZPb/anVDbypzfQa+ay64MW0Zo8aJ8gZPWMMK6/OubMVb6lUPMagqjOPnmtauXnFCACVl3O7ogjeqQ=="
-  "resolved" "https://registry.npmjs.org/@sinonjs/text-encoding/-/text-encoding-0.7.1.tgz"
-  "version" "0.7.1"
->>>>>>> bd69ad40821ad2539465d67f7ce1ce1996bb27a2
 
 "@stripe/stripe-react-native@^0.1.0":
   "integrity" "sha512-L4selfDao68sw0qVx/kg63SVKCtQZs9ULSfnUqquJyuz1iNQqQEAHlw6RbwTS8I4DHAc7XjDMBpbP/1hKtYo7g=="
@@ -2976,14 +2960,11 @@
   "integrity" "sha512-LKVP3cgXBT9RYj+t+9FDKwS5tdI+rPBXaNSkma7hvqy35lc7mAokC2zsqWJH0LaqIt3B962nuYI77hsJoT1gow=="
   "resolved" "https://registry.npmjs.org/@types/cookie/-/cookie-0.3.3.tgz"
   "version" "0.3.3"
-<<<<<<< HEAD
-=======
 
 "@types/country-list@^2.1.0":
   "integrity" "sha512-aCE6SP9WQJkq9kNFDRdxpUfWhazvreNSPtm1BQG1B4/xSpKbRwfweVAChYx6MMLyTguCKJExGZ1C52Z8DlFSGg=="
   "resolved" "https://registry.npmjs.org/@types/country-list/-/country-list-2.1.0.tgz"
   "version" "2.1.0"
->>>>>>> bd69ad40821ad2539465d67f7ce1ce1996bb27a2
 
 "@types/eslint-visitor-keys@^1.0.0":
   "integrity" "sha512-OCutwjDZ4aFS6PB1UZ988C4YgwlBHJd6wCeQqaLdmadZ/7e+w79+hbMUFC1QXDNCmdyoRfAFdm0RypzwR+Qpag=="
@@ -3053,17 +3034,6 @@
   "integrity" "sha512-KfRL3PuHmqQLOG+2tGpRO26Ctg+Cq1E01D2DMriKEATHgWLfeNDmq9e29Q9WIky0dQ3NPkd1mzYH8Lm936Z9qw=="
   "resolved" "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.3.tgz"
   "version" "15.7.3"
-<<<<<<< HEAD
-
-"@types/react-native-vector-icons@^6.4.11":
-  "integrity" "sha512-jUy9CsTu1Cl3k6WRE7GnqBRHbuSv55PRVfMEel+fF73HKpF8g5JmTzTVMBDX8NfY3PlfIY5VlxiqWZxdjm38Pg=="
-  "resolved" "https://registry.npmjs.org/@types/react-native-vector-icons/-/react-native-vector-icons-6.4.11.tgz"
-  "version" "6.4.11"
-  dependencies:
-    "@types/react" "*"
-    "@types/react-native" "*"
-
-=======
 
 "@types/react-native-material-dropdown@^0.11.5":
   "integrity" "sha512-bjpQQg2ZIuRGlwMcFXQouh2oc0nmjcYh1WPW+RJbb8QUxF/KHovV2cfnJ9W0qNv1hRUfTx4xptyJFiJ9NM75fw=="
@@ -3081,7 +3051,6 @@
     "@types/react" "*"
     "@types/react-native" "*"
 
->>>>>>> bd69ad40821ad2539465d67f7ce1ce1996bb27a2
 "@types/react-native@*", "@types/react-native@^0.64.0":
   "integrity" "sha512-VqnlmadGkD5usREvnuyVpWDS1W8f6cCz6MP5fZdgONsaZ9/Ijfb9Iq9MZ5O3bnW1OyJixDX9HtSp3COsFSLD8Q=="
   "resolved" "https://registry.npmjs.org/@types/react-native/-/react-native-0.64.4.tgz"
@@ -8657,14 +8626,11 @@
     "jscodeshift" "^0.11.0"
     "nullthrows" "^1.1.1"
 
-<<<<<<< HEAD
-=======
 "react-native-dropdown-picker@^5.4.2":
   "integrity" "sha512-cZBPyN+k52jA9XguFnKoF5tLf31z6gjZ8GijO/pfVNSSEtPwZ14UTUrr87JiiOnMh5K/O2kRzZ/jZN8D0MmUMA=="
   "resolved" "https://registry.npmjs.org/react-native-dropdown-picker/-/react-native-dropdown-picker-5.4.2.tgz"
   "version" "5.4.2"
 
->>>>>>> bd69ad40821ad2539465d67f7ce1ce1996bb27a2
 "react-native-gesture-handler@*", "react-native-gesture-handler@^1.10.3", "react-native-gesture-handler@>= 1.0.0":
   "integrity" "sha512-cBGMi1IEsIVMgoox4RvMx7V2r6bNKw0uR1Mu1o7NbuHS6BRSVLq0dP34l2ecnPlC+jpWd3le6Yg1nrdCjby2Mw=="
   "resolved" "https://registry.npmjs.org/react-native-gesture-handler/-/react-native-gesture-handler-1.10.3.tgz"
