@@ -17,7 +17,6 @@ import Router from './src/router';
 
 import Amplify, {Auth} from 'aws-amplify';
 import {withAuthenticator} from 'aws-amplify-react-native';
-
 import config from './src/aws-exports';
 Amplify.configure(config);
 
@@ -37,5 +36,70 @@ const App = () => {
     </View>
   );
 };
+//change the direction of label to rtl
+const signUpConfig = {
+  header: 'SaveIt',
+  hideAllDefaults: true,
+  defaultCountryCode: '972',
 
-export default withAuthenticator(App);
+  signUpFields: [
+    {
+      label: 'Username',
+      key: 'phone_number',
+      required: true,
+      displayOrder: 1,
+      type: 'string',
+    },
+    {
+      label: 'שם',
+      key: 'name',
+      required: true,
+      displayOrder: 2,
+      type: 'string',
+    },
+    {
+      label: 'שם משפחה',
+      key: 'family_name',
+      required: true,
+      displayOrder: 3,
+      type: 'string',
+    },
+    {
+      label: 'תאריך לידה',
+      key: 'birthdate',
+      required: true,
+      displayOrder: 4,
+      type: 'date',
+    },
+    {
+      label: 'מין',
+      key: 'gender',
+      required: true,
+      displayOrder: 5,
+      type: 'string',
+    },
+    {
+      label: 'עיר',
+      key: 'address',
+      required: true,
+      displayOrder: 6,
+      type: 'string',
+    },
+    {
+      label: 'סיסמא',
+      key: 'password',
+      required: true,
+      displayOrder: 7,
+      type: 'password',
+    },
+    {
+      label: 'מייל',
+      key: 'email',
+      required: true,
+      displayOrder: 8,
+      type: 'string',
+    },
+  ],
+};
+
+export default App;
