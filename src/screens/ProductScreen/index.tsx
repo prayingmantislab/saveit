@@ -22,11 +22,22 @@ const ProductScreen = () => {
   const route = useRoute();
 
   useEffect(() => {
-    if (!route.params?.id) {
+    if (
+      // @ts-ignore
+      !route.params?.id
+    ) {
       return;
     }
-    DataStore.query(Product, route.params.id).then(setProduct);
-  }, [route.params?.id]);
+    DataStore.query(
+      // @ts-ignore
+      Product,
+      // @ts-ignore
+      route.params.id,
+    ).then(setProduct);
+  }, [
+    // @ts-ignore
+    route.params?.id,
+  ]);
 
   useEffect(() => {
     if (product?.options) {
@@ -67,9 +78,12 @@ const ProductScreen = () => {
       <Picker
         selectedValue={selectedOption}
         onValueChange={itemValue => setSelectedOption(itemValue)}>
-        {product.options.map(option => (
-          <Picker.Item label={option} value={option} />
-        ))}
+        {
+          // @ts-ignore
+          product.options.map(option => (
+            <Picker.Item label={option} value={option} />
+          ))
+        }
       </Picker>
 
       {/* Price */}

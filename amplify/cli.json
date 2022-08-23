@@ -56,5 +56,11 @@
             "overrides": true
         }
     },
+<<<<<<< HEAD
     "debug": {}
+=======
+    "debug": {
+        "shareProjectConfig": true
+    }
+>>>>>>> bd69ad40821ad2539465d67f7ce1ce1996bb27a2
 }

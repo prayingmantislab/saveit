@@ -4,12 +4,14 @@ import { schema } from './schema';
 
 
 
-const { Product, CartProduct, OrderProduct, Order, PaymentIntent } = initSchema(schema);
+const { Reminder, Recipient, Order, CartProduct, Product, User, ReminderRecipient } = initSchema(schema);
 
 export {
-  Product,
-  CartProduct,
-  OrderProduct,
+  Reminder,
+  Recipient,
   Order,
-  PaymentIntent
+  CartProduct,
+  Product,
+  User,
+  ReminderRecipient
 };

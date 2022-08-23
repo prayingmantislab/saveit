@@ -1,7 +1,7 @@
 export const schema = {
     "models": {
-        "Product": {
-            "name": "Product",
+        "Reminder": {
+            "name": "Reminder",
             "fields": {
                 "id": {
                     "name": "id",
@@ -10,74 +10,221 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "title": {
-                    "name": "title",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "description": {
-                    "name": "description",
+                "event": {
+                    "name": "event",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "image": {
-                    "name": "image",
+                "date": {
+                    "name": "date",
+                    "isArray": false,
+                    "type": "AWSDate",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "Recipients": {
+                    "name": "Recipients",
+                    "isArray": true,
+                    "type": {
+                        "model": "ReminderRecipient"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": "reminder"
+                    }
+                },
+                "createdAt": {
+                    "name": "createdAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "updatedAt": {
+                    "name": "updatedAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                }
+            },
+            "syncable": true,
+            "pluralName": "Reminders",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Recipient": {
+            "name": "Recipient",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "name": {
+                    "name": "name",
                     "isArray": false,
                     "type": "String",
                     "isRequired": true,
                     "attributes": []
                 },
-                "images": {
-                    "name": "images",
-                    "isArray": true,
+                "relation": {
+                    "name": "relation",
+                    "isArray": false,
                     "type": "String",
                     "isRequired": true,
-                    "attributes": [],
-                    "isArrayNullable": false
+                    "attributes": []
                 },
-                "options": {
-                    "name": "options",
+                "birthDay": {
+                    "name": "birthDay",
+                    "isArray": false,
+                    "type": "AWSDate",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "address": {
+                    "name": "address",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "interests": {
+                    "name": "interests",
                     "isArray": true,
                     "type": "String",
                     "isRequired": true,
                     "attributes": [],
                     "isArrayNullable": true
                 },
-                "avgRating": {
-                    "name": "avgRating",
-                    "isArray": false,
-                    "type": "Float",
+                "reminders": {
+                    "name": "reminders",
+                    "isArray": true,
+                    "type": {
+                        "model": "ReminderRecipient"
+                    },
                     "isRequired": false,
-                    "attributes": []
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": "recipient"
+                    }
                 },
-                "ratings": {
-                    "name": "ratings",
+                "createdAt": {
+                    "name": "createdAt",
                     "isArray": false,
-                    "type": "Int",
+                    "type": "AWSDateTime",
                     "isRequired": false,
-                    "attributes": []
+                    "attributes": [],
+                    "isReadOnly": true
                 },
-                "price": {
-                    "name": "price",
+                "updatedAt": {
+                    "name": "updatedAt",
                     "isArray": false,
-                    "type": "Float",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "oldPrice": {
-                    "name": "oldPrice",
-                    "isArray": false,
-                    "type": "Float",
+                    "type": "AWSDateTime",
                     "isRequired": false,
-                    "attributes": []
+                    "attributes": [],
+                    "isReadOnly": true
                 }
             },
             "syncable": true,
-            "pluralName": "Products",
+            "pluralName": "Recipients",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Order": {
+            "name": "Order",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "CartProducts": {
+                    "name": "CartProducts",
+                    "isArray": true,
+                    "type": {
+                        "model": "CartProduct"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": "orderID"
+                    }
+                },
+                "createdAt": {
+                    "name": "createdAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "updatedAt": {
+                    "name": "updatedAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                }
+            },
+            "syncable": true,
+            "pluralName": "Orders",
             "attributes": [
                 {
                     "type": "model",
@@ -152,6 +299,29 @@ export const schema = {
                         "associatedWith": "id",
                         "targetName": "productID"
                     }
+                },
+                "orderID": {
+                    "name": "orderID",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "createdAt": {
+                    "name": "createdAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "updatedAt": {
+                    "name": "updatedAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
                 }
             },
             "syncable": true,
@@ -162,6 +332,15 @@ export const schema = {
                     "properties": {}
                 },
                 {
+                    "type": "key",
+                    "properties": {
+                        "name": "byOrder",
+                        "fields": [
+                            "orderID"
+                        ]
+                    }
+                },
+                {
                     "type": "auth",
                     "properties": {
                         "rules": [
@@ -179,8 +358,8 @@ export const schema = {
                 }
             ]
         },
-        "OrderProduct": {
-            "name": "OrderProduct",
+        "Product": {
+            "name": "Product",
             "fields": {
                 "id": {
                     "name": "id",
@@ -189,65 +368,90 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "quantity": {
-                    "name": "quantity",
+                "title": {
+                    "name": "title",
                     "isArray": false,
-                    "type": "Int",
+                    "type": "String",
                     "isRequired": true,
                     "attributes": []
                 },
-                "option": {
-                    "name": "option",
+                "description": {
+                    "name": "description",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "productID": {
-                    "name": "productID",
+                "image": {
+                    "name": "image",
                     "isArray": false,
-                    "type": "ID",
+                    "type": "String",
                     "isRequired": true,
                     "attributes": []
                 },
-                "product": {
-                    "name": "product",
-                    "isArray": false,
-                    "type": {
-                        "model": "Product"
-                    },
-                    "isRequired": false,
+                "images": {
+                    "name": "images",
+                    "isArray": true,
+                    "type": "String",
+                    "isRequired": true,
                     "attributes": [],
-                    "association": {
-                        "connectionType": "HAS_ONE",
-                        "associatedWith": "id",
-                        "targetName": "productID"
-                    }
+                    "isArrayNullable": false
                 },
-                "orderID": {
-                    "name": "orderID",
+                "options": {
+                    "name": "options",
+                    "isArray": true,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": [],
+                    "isArrayNullable": true
+                },
+                "avgRating": {
+                    "name": "avgRating",
                     "isArray": false,
-                    "type": "ID",
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "ratings": {
+                    "name": "ratings",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "price": {
+                    "name": "price",
+                    "isArray": false,
+                    "type": "Float",
                     "isRequired": true,
                     "attributes": []
                 },
-                "order": {
-                    "name": "order",
+                "oldPrice": {
+                    "name": "oldPrice",
                     "isArray": false,
-                    "type": {
-                        "model": "Order"
-                    },
+                    "type": "Float",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "createdAt": {
+                    "name": "createdAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
                     "isRequired": false,
                     "attributes": [],
-                    "association": {
-                        "connectionType": "HAS_ONE",
-                        "associatedWith": "id",
-                        "targetName": "orderID"
-                    }
+                    "isReadOnly": true
+                },
+                "updatedAt": {
+                    "name": "updatedAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
                 }
             },
             "syncable": true,
-            "pluralName": "OrderProducts",
+            "pluralName": "Products",
             "attributes": [
                 {
                     "type": "model",
@@ -271,8 +475,8 @@ export const schema = {
                 }
             ]
         },
-        "Order": {
-            "name": "Order",
+        "User": {
+            "name": "User",
             "fields": {
                 "id": {
                     "name": "id",
@@ -281,15 +485,15 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "userSub": {
-                    "name": "userSub",
+                "firstName": {
+                    "name": "firstName",
                     "isArray": false,
                     "type": "String",
                     "isRequired": true,
                     "attributes": []
                 },
-                "fullName": {
-                    "name": "fullName",
+                "lastName": {
+                    "name": "lastName",
                     "isArray": false,
                     "type": "String",
                     "isRequired": true,
@@ -298,12 +502,19 @@ export const schema = {
                 "phoneNumber": {
                     "name": "phoneNumber",
                     "isArray": false,
-                    "type": "String",
+                    "type": "AWSPhone",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "birthDay": {
+                    "name": "birthDay",
+                    "isArray": false,
+                    "type": "AWSDate",
                     "isRequired": false,
                     "attributes": []
                 },
-                "country": {
-                    "name": "country",
+                "sex": {
+                    "name": "sex",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
@@ -316,16 +527,39 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "address": {
-                    "name": "address",
+                "email": {
+                    "name": "email",
+                    "isArray": false,
+                    "type": "AWSEmail",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "password": {
+                    "name": "password",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
+                },
+                "createdAt": {
+                    "name": "createdAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "updatedAt": {
+                    "name": "updatedAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
                 }
             },
             "syncable": true,
-            "pluralName": "Orders",
+            "pluralName": "Users",
             "attributes": [
                 {
                     "type": "model",
@@ -348,22 +582,89 @@ export const schema = {
                     }
                 }
             ]
+        },
+        "ReminderRecipient": {
+            "name": "ReminderRecipient",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "reminder": {
+                    "name": "reminder",
+                    "isArray": false,
+                    "type": {
+                        "model": "Reminder"
+                    },
+                    "isRequired": true,
+                    "attributes": [],
+                    "association": {
+                        "connectionType": "BELONGS_TO",
+                        "targetName": "reminderID"
+                    }
+                },
+                "recipient": {
+                    "name": "recipient",
+                    "isArray": false,
+                    "type": {
+                        "model": "Recipient"
+                    },
+                    "isRequired": true,
+                    "attributes": [],
+                    "association": {
+                        "connectionType": "BELONGS_TO",
+                        "targetName": "recipientID"
+                    }
+                },
+                "createdAt": {
+                    "name": "createdAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "updatedAt": {
+                    "name": "updatedAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                }
+            },
+            "syncable": true,
+            "pluralName": "ReminderRecipients",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byReminder",
+                        "fields": [
+                            "reminderID"
+                        ]
+                    }
+                },
+                {
+                    "type": "key",
+                    "properties": {
+                        "name": "byRecipient",
+                        "fields": [
+                            "recipientID"
+                        ]
+                    }
+                }
+            ]
         }
     },
     "enums": {},
-    "nonModels": {
-        "PaymentIntent": {
-            "name": "PaymentIntent",
-            "fields": {
-                "clientSecret": {
-                    "name": "clientSecret",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": true,
-                    "attributes": []
-                }
-            }
-        }
-    },
-    "version": "df2fa0408539b44a88eb8512b547b419"
+    "nonModels": {},
+    "version": "c0f207dbd6b9e31bcce0b78c57a55004"
 };

@@ -1,11 +1,16 @@
 {
   "auth": {
+<<<<<<< HEAD
     "SaveitApp": {
+=======
+    "amazonclonefcafcbef": {
+>>>>>>> bd69ad40821ad2539465d67f7ce1ce1996bb27a2
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
       "customAuth": false,
       "frontendAuthConfig": {
+<<<<<<< HEAD
         "socialProviders": [],
         "usernameAttributes": ["PHONE_NUMBER"],
         "signupAttributes": [
@@ -15,10 +20,18 @@
           "BIRTHDATE",
           "GENDER",
           "ADDRESS",
+=======
+        "socialProviders": [
+          "GOOGLE"
+        ],
+        "usernameAttributes": [],
+        "signupAttributes": [
+>>>>>>> bd69ad40821ad2539465d67f7ce1ce1996bb27a2
           "EMAIL"
         ],
         "passwordProtectionSettings": {
           "passwordPolicyMinLength": 8,
+<<<<<<< HEAD
           "passwordPolicyCharacters": [
             "REQUIRES_LOWERCASE",
             "REQUIRES_NUMBERS",
@@ -29,6 +42,40 @@
         "mfaConfiguration": "OFF",
         "mfaTypes": ["SMS"],
         "verificationMechanisms": ["EMAIL"]
+=======
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      }
+    }
+  },
+  "api": {
+    "amazonclone": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 30,
+              "description": "api key description"
+            }
+          },
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AWS_IAM"
+            }
+          ]
+        }
+>>>>>>> bd69ad40821ad2539465d67f7ce1ce1996bb27a2
       }
     }
   }
