@@ -8,6 +8,7 @@ import ShoppingCartStack from './ShoppingCartStack';
 import WhoSpoileScreen from '../screens/WhoSpoileScreen';
 import InterestsScreen from '../screens/InterestsScreen';
 import ReminderScreen from '../screens/ReminderScreen';
+import LoginScreen from '../screens/LoginScreen';
 const Tab = createBottomTabNavigator();
 
 const BottomTabNav = () => {
@@ -37,8 +38,8 @@ const BottomTabNav = () => {
         }}
       />
       <Tab.Screen
-        component={InterestsScreen}
-        name="InterestsScreen"
+        component={LoginScreen}
+        name="LoginScreen"
         options={{
           tabBarIcon: ({color}) => (
             <Entypo name="setup" color={color} size={25} />
