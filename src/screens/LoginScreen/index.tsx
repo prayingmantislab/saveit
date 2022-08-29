@@ -48,7 +48,7 @@ const LoginScreen = () => {
   return (
     <View style={styles.container}>
       <ImageBackground source={bgImage} style={styles.backgroundImage} />
-      <Text>ברוכים הבאים!</Text>
+      <Text>ברוכים הנמצאים!</Text>
       <TouchableOpacity
         onPress={() => {
           try {
