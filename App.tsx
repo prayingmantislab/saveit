@@ -33,9 +33,7 @@ const App = () => {
   return (
     <View style={backgroundStyle}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <StripeProvider publishableKey="pk_test_51IqIfWA2WcfjP4nohlwR7PdK6SEeIt5eenVLWcrduRWk5IlG9WSid3GFZiItmJS4de56nrynA3hblwhrW7FVGED500vznukyss">
-        <Router />
-      </StripeProvider>
+      <Router />
     </View>
   );
 };
